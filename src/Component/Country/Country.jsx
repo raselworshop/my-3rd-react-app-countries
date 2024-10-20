@@ -3,7 +3,7 @@ import './Country.css'
 import CountryDetails from '../CountryDetails/CountryDetails';
 
 const Country = ({ country, handleVisitedConutry, handleVisitedFlags }) => {
-    // console.log(country)
+    console.log(country)
     const { name, flags, area, population, region, borders, capital, cca3 } = country;
 
     const [visited, setVisited] = useState(false);
