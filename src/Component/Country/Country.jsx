@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import './Country.css'
+import CountryDetails from '../CountryDetails/CountryDetails';
 
-const Country = ({country, handleVisitedConutry, handleVisitedFlags}) => {
+const Country = ({ country, handleVisitedConutry, handleVisitedFlags }) => {
     // console.log(country)
-    const {name, flags, area, population, region, borders, capital, cca3} = country;
+    const { name, flags, area, population, region, borders, capital, cca3 } = country;
 
     const [visited, setVisited] = useState(false);
-    const handleVisited =()=>{
+    const handleVisited = () => {
         // setVisited(true)
         setVisited(!visited)
     }
@@ -27,11 +28,17 @@ const Country = ({country, handleVisitedConutry, handleVisitedFlags}) => {
             <h5>Borders: {borders}</h5>
             <div className='png'><img className='full' src={flags.png} alt="" /></div>
             {/* <button onClick={pushHandleVisitedCountry}>Mark Visited</button> */}
-            <button onClick={()=>handleVisitedConutry(country)}>Mark Visited</button>
-            <button onClick={()=>handleVisitedFlags(country.flags.png)}>Add Flag</button>
-            <button onClick={handleVisited}>{visited? 'Visited':'wish'}</button>
+            <button onClick={() => handleVisitedConutry(country)}>Mark Visited</button>
+            <button onClick={() => handleVisitedFlags(country.flags.png)}>Add Flag</button>
+            <button onClick={handleVisited}>{visited ? 'Visited' : 'wish'}</button>
             {/* {visited && 'I have visited this Country'} */}
-            {visited ? 'I have visted':'I want to visit'}
+            {visited ? 'I have visted' : 'I want to visit'}
+            <hr/>
+            <CountryDetails
+                country={country}
+                handleVisitedConutry={handleVisitedConutry}
+                handleVisitedFlags={handleVisitedFlags}
+            ></CountryDetails>
         </div>
     );
 };
