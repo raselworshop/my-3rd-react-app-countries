@@ -3,4 +3,16 @@
     margin: 15px;
     padding: 15px;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+.png{
+    width: 200px;
+    height:100px;
+}
+.full{
+    width: 100%;
+    height: 100%;
 }
